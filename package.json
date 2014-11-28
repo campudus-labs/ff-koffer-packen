@@ -17,5 +17,11 @@
   },
   "homepage": "https://github.com/campudus/ff-koffer-packen",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "jasmine-core": "^2.1.2",
+    "karma": "^0.12.28",
+    "karma-browserify": "^1.0.0",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-jasmine": "^0.3.1"
+  }
 }
