@@ -1,0 +1,4 @@
+
+function shuffleInputElements(elementCount) {
+  return [];
+}
