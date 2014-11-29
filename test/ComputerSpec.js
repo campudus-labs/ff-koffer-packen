@@ -15,9 +15,9 @@ describe('The computer-shuffle of elements', function () {
   it('should not have duplicates', function () {
     var elements = computer.shuffle(100);
     elements.forEach(function (elem, idx) {
-      console.log(idx);
-      console.log(elem);
-      expect(idx).toBe(elements.lastIndexOf(elem));
+      expect(elements.filter(function(e) {
+        return elem.name === e.name;
+      }).length).toBe(1);
     })
   });
 

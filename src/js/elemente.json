@@ -1,7 +1,7 @@
 [
-  "Elefant",
-  "Hund",
-  "Katze",
-  "Maus",
-  "Tiger"
+  {"name":"Elefant"},
+  {"name":"Hund"},
+  {"name":"Katze"},
+  {"name":"Maus"},
+  {"name":"Tiger"}
 ]
