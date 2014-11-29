@@ -7,7 +7,7 @@ describe('The computer-shuffle of elements', function () {
   });
 
   it('should never take more elements than we have in elements', function () {
-    var elements = require('../src/js/elemente.json');
+    var elements = require('../src/js/elements.json');
 
     expect(computer.shuffle(elements.length + 5).length).toBe(elements.length);
   });
