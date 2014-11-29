@@ -105,4 +105,22 @@ describe('The suitcase', function () {
     expect(sc.isDone()).toBe(true);
   });
 
+  it('should yield the correct values when hinting with numbers', function () {
+    var sc = new Suitcase();
+    var hint;
+
+    hint = sc.hint(0);
+    expect(hint).toBe(false);
+
+    sc.set([a, b]);
+
+    hint = sc.hint(0);
+    expect(hint.name).toBe(a.name);
+    hint = sc.hint(1);
+    expect(hint.name).toBe(b.name);
+    hint = sc.hint(2);
+    expect(hint).toBe(false);
+    expect(sc.isDone()).toBe(false);
+  });
+
 });

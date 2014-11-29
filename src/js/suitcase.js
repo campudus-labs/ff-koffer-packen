@@ -5,15 +5,20 @@ function Suitcase() {
 }
 
 Suitcase.prototype.isEmpty = function () {
-  return true;
+  return this.elementsCount === 0;
 };
 
 Suitcase.prototype.isDone = function () {
-  return false;
+  return this.correctElements === this.elementsCount;
 };
 
-Suitcase.prototype.hint = function() {
-  return this.elements[this.correctElements];
+Suitcase.prototype.hint = function (i) {
+  i = i || 0;
+  if (this.isDone() || this.correctElements + i >= this.elementsCount) {
+    return false;
+  } else {
+    return this.elements[this.correctElements + i];
+  }
 };
 
 Suitcase.prototype.set = function (elements) {
@@ -23,7 +28,12 @@ Suitcase.prototype.set = function (elements) {
 };
 
 Suitcase.prototype.put = function (element) {
-  return false;
+  if (element.name === this.elements[this.correctElements].name) {
+    this.correctElements++;
+    return true;
+  } else {
+    return false;
+  }
 };
 
 module.exports = Suitcase;
