@@ -1,5 +1,6 @@
+var elements = [];
+
 function Suitcase() {
-  this.elements = [];
   this.correctElements = 0;
   this.elementsCount = 0;
 }
@@ -17,18 +18,18 @@ Suitcase.prototype.hint = function (i) {
   if (this.isDone() || this.correctElements + i >= this.elementsCount) {
     return false;
   } else {
-    return this.elements[this.correctElements + i];
+    return elements[this.correctElements + i];
   }
 };
 
-Suitcase.prototype.set = function (elements) {
-  this.elements = elements;
+Suitcase.prototype.set = function (list) {
+  elements = list;
   this.correctElements = 0;
-  this.elementsCount = this.elements.length;
+  this.elementsCount = elements.length;
 };
 
 Suitcase.prototype.put = function (element) {
-  if (element.name === this.elements[this.correctElements].name) {
+  if (element.name === elements[this.correctElements].name) {
     this.correctElements++;
     return true;
   } else {
